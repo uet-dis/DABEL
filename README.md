@@ -16,6 +16,7 @@ Detecting cyberattacks on Industrial Control Systems, particularly those using t
 ## 📜 Citation
 
 If you find our work useful, please cite:
+
 @article{jDABEL25,
 title={Diffusion-powered Data Augmentation and Explainable Boosting Ensemble Learning for Cyberattack Detection in Industrial Networks},
 author={Tuyen T. Nguyen, Phong H. Nguyen, Hanh P. Du, Hoa N. Nguyen },
