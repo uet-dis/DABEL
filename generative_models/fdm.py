@@ -75,5 +75,5 @@ params = {
     'eval_metric': 'auc'
 }
 XGB = XGBClassifier(**params)
-
+# generate more samples
 generateFDM(XGB)
