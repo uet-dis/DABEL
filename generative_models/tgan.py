@@ -27,8 +27,6 @@ from tabgan.sampler import OriginalGenerator, GANGenerator, ForestDiffusionGener
 import warnings
 warnings.filterwarnings(action='ignore')
 
-
-
 params = {
     "n_estimators": 400,
     "max_leaf_nodes": 15000,
@@ -59,6 +57,7 @@ X_train_scaled = pd.DataFrame(scaler.fit_transform(X_train), columns=X_train.col
 X_test_scaled = pd.DataFrame(scaler.transform(X_test), columns=X_test.columns)
     
 rf.fit(X_train_scaled, y_train)     
+# testing
 y_preds = rf.predict(X_test_scaled)
 accuracy = accuracy_score(y_test, y_preds)
 print(f'Accuracy of model trained with orginal training set: {accuracy}')
