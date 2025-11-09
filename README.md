@@ -3,8 +3,7 @@
 This repository contains the implementation and datasets used in our paper:
 
 **"Diffusion-powered Data Augmentation and Explainable Boosting Ensemble Learning for Cyberattack Detection in Industrial Networks"**  
-_Author(s):Tuyen T. Nguyen, Phong H. Nguyen, Hanh P. Du, Hoa N. Nguyen 
-_Journal: IEEE Open Journal of the Communications Society, 2025
+_Authors:Tuyen T. Nguyen, Phong H. Nguyen, Hanh P. Du, Hoa N. Nguyen 
 
 > Please cite our work if you use this code or data in your research.
 
@@ -20,7 +19,8 @@ If you find our work useful, please cite:
 @article{jDABEL25,
 title={Diffusion-powered Data Augmentation and Explainable Boosting Ensemble Learning for Cyberattack Detection in Industrial Networks},
 author={Tuyen T. Nguyen, Phong H. Nguyen, Hanh P. Du, Hoa N. Nguyen },
-journal={IEEE Open Journal of the Communications Society},
-note={in revision},
+journal={Intelligent Automation & Soft Computing},
+publisher={Tech Science Press},
+note={submitted},
 year={2025}
 }
