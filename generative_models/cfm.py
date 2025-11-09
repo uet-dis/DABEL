@@ -118,58 +118,6 @@ def train_parallel(X_train, y_train):
     model.fit(X_train[y_no_miss, :], y_train[y_no_miss])
 
     return model
-# def train_parallel(X_train, y_train):
-#     print("Unique values in y_train inside train_parallel:", np.unique(y_train))
-#     model = XGBClassifier(
-#         n_estimators=n_estimators,       
-#         max_depth=max_depth,            
-#         learning_rate=0.3,      
-#         objective='binary:logistic',  
-#         use_label_encoder=False, 
-#         eval_metric='logloss',  
-#         subsample=subsample,          
-#         reg_lambda=reg_lambda,         
-#         reg_alpha=reg_alpha,          
-#         tree_method=tree_method,     
-#         seed=666
-#     )
-
-#     y_no_miss = ~np.isnan(y_train)
-#     model.fit(X_train[y_no_miss, :], y_train[y_no_miss])
-
-#     return model
-    
-# Return the flow at time t using the XGBoost models
-
-# b, c = X_train.shape
-# y_uniques = np.unique(y_train, return_counts=True)
-
-# mask_y = {}  # mask for which observations has a specific value of y
-# for unique_label in y_uniques:
-#     label_key = str(unique_label) 
-#     mask_y[label_key] = np.zeros(b, dtype=bool)
-#     mask_y[label_key][y_train == unique_label] = True
-#     mask_y[label_key] = np.tile(mask_y[label_key], (duplicate_K))
-
-# regr = Parallel(n_jobs=-1)(  # using all cpus
-#         delayed(train_parallel)(
-#             X_train.reshape(n_t, b * duplicate_K, c)[i][mask_y[j], :],
-#             y_train.reshape(n_t, b * duplicate_K, c)[i][mask_y[j], k],
-#             # y_train[mask_y[j]]
-#         )
-#         for i in range(n_t)
-#         for j in y_uniques
-#         for k in range(c)
-#     )
-
-# regr_ = [[[None for k in range(c)] for i in range(n_t)] for j in y_uniques]
-# current_i = 0
-# for i in range(n_t):
-#     for j in range(len(y_uniques)):
-#         for k in range(c):
-#             regr_[j][i][k] = regr[current_i]
-#             current_i += 1
-
 def my_model(t, xt, mask_y=None):
     # xt is [b*c]
     xt = xt.reshape(xt.shape[0] // c, c)  # [b, c]
